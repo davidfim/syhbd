@@ -5,17 +5,9 @@ import Game from './pages/Game'
 import Dinner from './pages/Dinner'
 import './App.css'
 
-// Basename for GitHub Pages: use first path segment (repo name) so it works at .../syhbd/ or .../syaibd/
-function getBasename() {
-  const path = window.location.pathname.replace(/\/$/, '') || '/'
-  const segments = path.split('/').filter(Boolean)
-  if (segments.length >= 1) return `/${segments[0]}/`
-  return '/'
-}
-
 function App() {
   return (
-    <BrowserRouter basename={getBasename()}>
+    <BrowserRouter basename={import.meta.env.BASE_URL}>
       <div className="app-container">
         <Routes>
           <Route path="/" element={<Invitation />} />

@@ -4,6 +4,6 @@ import react from '@vitejs/plugin-react'
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
-  // Relative base so the app works on GitHub Pages at any path (e.g. .../syhbd/ or .../syaibd/)
-  base: './',
+  // Absolute base so script/assets load correctly (fixes blank page when visiting .../syhbd with no trailing slash)
+  base: '/syhbd/',
 })
