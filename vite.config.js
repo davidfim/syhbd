@@ -4,5 +4,5 @@ import react from '@vitejs/plugin-react'
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
-  base: '/syaibd/', // GitHub Pages: https://<username>.github.io/syaibd/
+  base: '/syhbd/', // GitHub Pages: https://<username>.github.io/syaibd/
 })
