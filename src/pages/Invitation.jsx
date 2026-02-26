@@ -1,7 +1,15 @@
+import { useContext } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { MusicContext } from '../MusicContext'
 
 export default function Invitation() {
   const navigate = useNavigate()
+  const startMusic = useContext(MusicContext)
+
+  const handleOpenInvitation = () => {
+    startMusic()
+    navigate('/wishes')
+  }
 
   return (
     <div className="page invitation-page">
@@ -21,7 +29,7 @@ export default function Invitation() {
         <button
           type="button"
           className="btn btn-primary invitation-btn"
-          onClick={() => navigate('/wishes')}
+          onClick={handleOpenInvitation}
         >
           Open invitation
         </button>

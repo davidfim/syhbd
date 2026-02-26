@@ -6,7 +6,7 @@ const WORDS = [
   '100k Follower Tiktok', 'Makin banyak endoresan', 'Body goal!', 'Turun 10kg', 'Makin HOTTTYY', 'Makin Bijak',
   'Makin berpikiran dewasa', 'BELANDA HERE WE GO', 'IELTS 9.5', 'Selalu bahaagiaaaa <3', 'Cammmtikk', 'Diberkatii',
   'Makin berdedikasi', 'Tidak malas malasan', 'Semua yang dilakukan berhasil', 'Rajin olahraga!', 'Rajin Ngonten', 'Rambut makin badai!',
-  'OTOT KUAT!', 'Hourglassssss', 'Membanggakan semua orang tersayang'
+  'OTOT KUAT!', 'Hourglassssss', 'Membanggakan semua orang tersayang','Makin dicintai orang orang', 'Bahagia disetiap detik aktifitas', 'Iphone 18 Pro Max', 'BYD Atto 1', 'BYD Seal', 'Dapet aku jadi suami', 'Semua anggota tubuh sehat','Makan enak selalu',
 ]
 
 function shuffleArray(arr) {

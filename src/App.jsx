@@ -1,4 +1,6 @@
+import { useCallback, useEffect, useRef } from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { MusicContext } from './MusicContext'
 import Invitation from './pages/Invitation'
 import Wishes from './pages/Wishes'
 import Game from './pages/Game'
@@ -14,17 +16,37 @@ function getBasename() {
 }
 
 function App() {
+  const audioRef = useRef(null)
+
+  const playMusic = useCallback(() => {
+    const audio = audioRef.current
+    if (audio) {
+      audio.play().catch(() => {})
+    }
+  }, [])
+
+  // Try to autoplay as soon as page opens (may be blocked by browser until user interaction)
+  useEffect(() => {
+    playMusic()
+  }, [playMusic])
+
+  const base = import.meta.env.BASE_URL
+  const songSrc = `${base}song.mp3`
+
   return (
-    <BrowserRouter basename={getBasename()}>
-      <div className="app-container">
-        <Routes>
-          <Route path="/" element={<Invitation />} />
-          <Route path="/wishes" element={<Wishes />} />
-          <Route path="/game" element={<Game />} />
-          <Route path="/dinner" element={<Dinner />} />
-        </Routes>
-      </div>
-    </BrowserRouter>
+    <MusicContext.Provider value={playMusic}>
+      <audio ref={audioRef} src={songSrc} loop preload="auto" />
+      <BrowserRouter basename={getBasename()}>
+        <div className="app-container">
+          <Routes>
+            <Route path="/" element={<Invitation />} />
+            <Route path="/wishes" element={<Wishes />} />
+            <Route path="/game" element={<Game />} />
+            <Route path="/dinner" element={<Dinner />} />
+          </Routes>
+        </div>
+      </BrowserRouter>
+    </MusicContext.Provider>
   )
 }
 
