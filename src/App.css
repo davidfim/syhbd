@@ -1,3 +1,22 @@
+/* YouTube background audio – hidden, audio only */
+.youtube-audio-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  opacity: 0;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.youtube-audio-container iframe {
+  position: absolute;
+  top: -9999px;
+  left: -9999px;
+}
+
 /* Mobile-first: full width. Desktop: centered column like mobile. */
 .app-container {
   width: 100%;
